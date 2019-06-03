@@ -1,0 +1,16 @@
+{
+  "name": "demystifying-graphql",
+  "version": "1.0.0",
+  "private": true,
+  "author": "Colin Cummings <colinrcummings@gmail.com>",
+  "scripts": {
+    "start": "mdx-deck deck.mdx",
+    "build": "mdx-deck build deck.mdx",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.0.1",
+    "mdx-deck": "^2.3.2"
+  }
+}
