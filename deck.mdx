@@ -1,1 +1,269 @@
+import { Appear } from 'mdx-deck'
+import { Invert, Split } from 'mdx-deck/layouts'
+import { Head } from '@mdx-deck/components'
+export { default as theme } from 'src/theme'
+
+<Head>
+  <title>Demystifying GraphQL</title>
+</Head>
+
+<Invert>
+
+<img
+  src='src/images/graphql.png'
+  style={{
+    height: '50vh'
+  }}
+/>
+
 # Demystifying GraphQL
+
+</Invert>
+
+---
+
+# What is GraphQL?
+
+<blockquote>"A query language for your API." - Docs</blockquote>
+
+---
+
+# Why GraphQL?
+
+<ul>
+  <Appear>
+    <li>Single source of truth</li>
+    <li>Declarative</li>
+    <li>Perfect payloads</li>
+    <li>Framework agnostic</li>
+    <li>Storage agnostic</li>
+    <li>Type-safety</li>
+    <li>Performance</li>
+    <li>Ecosystem</li>
+    <li>DX</li>
+  </Appear>
+</ul>
+
+---
+
+<Invert>
+
+# Core Concepts
+
+</Invert>
+
+---
+
+# Graph
+
+<ul>
+  <li>A mental model for a business domain comprised of <i>nodes</i> and <i>edges</i></li>
+  <Appear>
+    <li><i>Nodes</i> are collections of entities (e.g., people)</li>
+    <li><i>Edges</i> are connections between <i>nodes</i> (e.g., friendships)</li>
+    <li>Defined by a <b>Schema</b></li>
+  </Appear>
+</ul>
+
+---
+
+# Type
+
+The building block of the GraphQL **Schema** Definition Language (SDL).
+
+<Appear>
+
+_e.g., object, scalar, etc._
+
+</Appear>
+
+---
+
+# Schema
+
+A collection of **Types** that defines the capabilities of a GraphQL API.
+
+<Appear>
+
+_e.g., **Queries** and **Mutations**_
+
+</Appear>
+
+---
+
+# Query
+
+A **Type** that describes a way to retrieve data.
+
+<Appear>
+
+_i.e., SELECT_
+
+</Appear>
+
+---
+
+# Mutation
+
+A **Type** that describes a way to change data.
+
+<Appear>
+
+_i.e., INSERT, UPDATE or DELETE_
+
+</Appear>
+
+---
+
+# Field
+
+A property of a specific **Type**.
+
+<Appear>
+
+_e.g., name, which is a string_
+
+</Appear>
+
+---
+
+# Resolver
+
+A function used to implement a **Query** or a **Mutation**.
+
+---
+
+<Invert>
+
+# REST vs. GraphQL
+
+</Invert>
+
+---
+
+# Fetch
+
+<Split>
+ <h2 style={{ color: 'black' }}>REST</h2>
+ <h2 style={{ color: 'black' }}>GraphQL</h2>
+</Split>
+
+<Split>
+<div style={{ width: '50vw', padding: '0 4vw' }}>
+
+  ```
+  GET /users/1
+  ```
+
+</div>
+<div style={{ width: '50vw', padding: '0 4vw' }}>
+
+  ```
+  query {
+    user(id: '1') {
+      name
+    }
+  }
+  ```
+
+</div>
+</Split>
+
+---
+
+# Create
+
+<Split>
+ <h2 style={{ color: 'black' }}>REST</h2>
+ <h2 style={{ color: 'black' }}>GraphQL</h2>
+</Split>
+
+<Split>
+<div style={{ width: '50vw', padding: '0 4vw' }}>
+
+  ```
+  POST /users
+
+  {
+    name: 'New'
+  }
+  ```
+
+</div>
+<div style={{ width: '50vw', padding: '0 4vw' }}>
+
+  ```
+  mutation {
+    createUser(name: 'New') {
+      id
+      createdAt
+    }
+  }
+  ```
+
+</div>
+</Split>
+
+---
+
+# Update
+
+<Split>
+ <h2 style={{ color: 'black' }}>REST</h2>
+ <h2 style={{ color: 'black' }}>GraphQL</h2>
+</Split>
+
+<Split>
+<div style={{ width: '50vw', padding: '0 4vw' }}>
+
+  ```
+  PUT /users/1
+
+  {
+    name: 'Updated'
+  }
+  ```
+
+</div>
+<div style={{ width: '50vw', padding: '0 4vw' }}>
+
+  ```
+  mutation {
+    updateUser(id: '1', name: 'Updated') {
+      updatedAt
+    }
+  }
+  ```
+
+</div>
+</Split>
+
+---
+
+# Destroy
+
+<Split>
+ <h2 style={{ color: 'black' }}>REST</h2>
+ <h2 style={{ color: 'black' }}>GraphQL</h2>
+</Split>
+
+<Split>
+<div style={{ width: '50vw', padding: '0 4vw' }}>
+
+  ```
+  DELETE /users/1
+  ```
+
+</div>
+<div style={{ width: '50vw', padding: '0 4vw' }}>
+
+  ```
+  mutation {
+    destroyUser(id: '1') {
+      id
+    }
+  }
+  ```
+
+</div>
+</Split>
