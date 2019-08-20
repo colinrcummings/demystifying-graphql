@@ -5,12 +5,13 @@
   "author": "Colin Cummings <colinrcummings@gmail.com>",
   "scripts": {
     "start": "mdx-deck deck.mdx",
-    "build": "mdx-deck build deck.mdx",
+    "build": "rm -rf dist && mdx-deck build deck.mdx --basepath=\"/demystifying-graphql\"",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "gh-pages": "^2.0.1",
-    "mdx-deck": "^2.3.2"
+    "mdx-deck": "^2.3.2",
+    "url-loader": "^2.1.0"
   }
 }

@@ -10,7 +10,7 @@ export { default as theme } from 'src/theme'
 <Invert>
 
 <img
-  src='src/images/graphql.png'
+  src={require('url-loader!src/images/graphql.png')}
   style={{
     height: '50vh'
   }}
